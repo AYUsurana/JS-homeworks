@@ -3,7 +3,7 @@
 function solveEquation(a, b, c) {
   let arr;
 
-  // код для задачи №1 написала здесь
+  // мой код
   let root1, root2;
   let D = Math.round((Math.pow(b, 2) - 4*a*c));
 
@@ -24,7 +24,7 @@ function solveEquation(a, b, c) {
 function calculateTotalMortgage(percent, contribution, amount, date) {
   let totalAmount;
    
-  // код для задачи №2 написала здесь
+  // мой код
   
   let today = new Date();  
   let P = percent / 100 / 12;
