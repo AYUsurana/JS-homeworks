@@ -5,16 +5,16 @@ function solveEquation(a, b, c) {
 
   // мой код
   let root1, root2;
-  let D = Math.round((Math.pow(b, 2) - 4*a*c));
+  let discriminant = Math.round((Math.pow(b, 2) - 4*a*c));
 
-  if (D > 0) {
-    root1 = Number(((-b + Math.sqrt(D)) / (2*a)).toFixed(3));
-    root2 = Number(((-b - Math.sqrt(D)) / (2*a)).toFixed(3));
+  if (discriminant > 0) {
+    root1 = Number(((-b + Math.sqrt(discriminant)) / (2*a)).toFixed(3));
+    root2 = Number(((-b - Math.sqrt(discriminant)) / (2*a)).toFixed(3));
     arr = [root1, root2];
-  } else if (D === 0) {
+  } else if (discriminant === 0) {
     root1 = -b / (2*a);
     arr = [root1];
-  } else if (D < 0) {
+  } else if (discriminant < 0) {
     arr = [];
   }
 
@@ -27,7 +27,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   // мой код
   
   let today = new Date();  
-  let P = percent / 100 / 12;
+  let perc = percent / 100 / 12;
 
   if (isNaN(percent)) {
     return `Параметр "Процентная ставка" содержит неправильное значение "${percent}"`;
@@ -42,10 +42,10 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   }
   
   let credit = Number(amount) - Number(contribution);
-  let NumMonth = LoanPeriod(today, date);
+  let numMonth = LoanPeriod(today, date);
 
-  let Payment = credit * (P + (P / ((1 + P) ** NumMonth - 1)));
-  totalAmount = Number((Payment * NumMonth).toFixed(2));  
+  let Payment = credit * (perc + (perc / ((1 + perc) ** numMonth - 1)));
+  totalAmount = Number((Payment * numMonth).toFixed(2));  
 
   console.log(totalAmount);
   return totalAmount;
