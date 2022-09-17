@@ -121,7 +121,6 @@ class Student {
                 arr.push(this.marks[i][0]);
             }        
         }
-
         return (summ/arr.length);
     }
 
