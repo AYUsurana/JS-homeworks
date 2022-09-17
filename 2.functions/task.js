@@ -24,6 +24,7 @@ function getArrayParams(arr) {
   return { min: min, max: max, avg: avg };
 }
 
+
 // Задание 2
 function worker(arr) {
   let sum;
@@ -41,21 +42,22 @@ function makeWork(arrOfArr, func) {
   let max;
 
   // мой код
-  let Warray;
   max = 0;
   for (let i = 0; i < arrOfArr.length; i++) {
-    Warray = func(arrOfArr[i]);
     
-    if (Warray > max) 
+    let warray = func(arrOfArr[i]);
+    
+    if (warray > max) 
     {
-      max = Warray;
+      max = warray;
     }
 
-    Warray = 0;
+    warray = 0;
   }
   
   return max;
 }
+
 
 // Задание 3
 function worker2(arr) {
@@ -73,7 +75,6 @@ function worker2(arr) {
       min = arr[i];
     }
   }
-
-  let summ = Math.abs(max - min);
-  return summ;
+  
+  return let summ = Math.abs(max - min);;
 }
