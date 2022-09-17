@@ -13,6 +13,7 @@ class PrintEditionItem {
     }
 
     set state(value) {
+
         if (value < 0) {
             this._state = 0;
         } else if (value > 100) {
@@ -105,7 +106,7 @@ class Student {
 
     addMark(mark,subject) {
         if (mark < 0 && mark > 5) {
-            console.log("Введены некорретные отметки!");
+            console.log("Введены некорретные отметки.");
         } else {
             this.marks[subject].push(mark);
         }
